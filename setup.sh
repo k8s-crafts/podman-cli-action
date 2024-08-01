@@ -51,7 +51,7 @@ use_fallback_script() {
 }
 
 enable_podman_api() {
-    sudo systemctl --user enable --now podman.socket
+    systemctl --user enable --now podman.socket
     echo "DOCKER_HOST=unix:///run/user/$(id -u)/podman/podman.sock" >> "$GITHUB_ENV"
 }
 
