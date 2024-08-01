@@ -17,6 +17,6 @@ runs:
   steps:
     - name: Emulate Docker CLI with podman
       shell: bash
-      run: setup.sh
+      run: ./setup.sh
       env:
         ENABLE_PODMAN_API: ${{ inputs.podman_api }}
