@@ -11,9 +11,6 @@ inputs:
   podman_api:
     description: "Enable Podman API and configure DOCKER_HOST environment variable"
     default: "false"
-  docker_api:
-    description: "Disable Docker API if any"
-    default: "true"
 
 runs:
   using: composite
@@ -21,3 +18,6 @@ runs:
     - name: Emulate Docker CLI with podman
       shell: bash
       run: setup.sh
+      env:
+        ENABLE_PODMAN_API: ${{ inputs.podman_api }}
+        DISABLE_DOCKER_API: ${{ inputs.docker_api }}
