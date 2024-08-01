@@ -30,9 +30,14 @@ main() {
     # If apt is available, try installing podman-docker package.
     # If failed, fall back to method of an executable script.
     if command -v apt; then
-        sudo apt -y install podman-docker || use_fallback_script "$@"
+        sudo apt -y install podman-docker || \
+            echo "Failed to install podman-docker. Falling back to an executable script \"docker\"" && use_fallback_script
     else
         use_fallback_script
+    fi
+
+    if [[ -n "$ENABLE_PODMAN_API" && "$ENABLE_PODMAN_API" == "true" ]]; then
+        enable_podman_api
     fi
 }
 
@@ -43,6 +48,11 @@ main() {
 use_fallback_script() {
     mkdir -p "$BIN"; cat "$DIR/docker" > "$BIN/docker"; chmod +x "$BIN/docker"
     echo "PATH=$BIN:$PATH" >> "$GITHUB_ENV"
+}
+
+enable_podman_api() {
+    sudo systemctl --user enable --now podman.socket
+    echo "DOCKER_HOST=unix:///run/user/$(id -u)/podman/podman.sock" >> "$GITHUB_ENV"
 }
 
 main "$@"

@@ -21,7 +21,7 @@ jobs:
       - name: Test
         run: |
           test "$(podman version)" == "$(docker version)"
-  
+
   test-with-podman-api:
     strategy:
       matrix:
@@ -37,3 +37,5 @@ jobs:
       - name: Test
         run: |
           test "$(podman version)" == "$(docker version)"
+          test "$DOCKER_HOST" == "unix:///run/user/$(id -u)/podman/podman.sock"
+          systemctl --user is-active podman.socket

@@ -20,4 +20,3 @@ runs:
       run: setup.sh
       env:
         ENABLE_PODMAN_API: ${{ inputs.podman_api }}
-        DISABLE_DOCKER_API: ${{ inputs.docker_api }}
