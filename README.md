@@ -22,8 +22,6 @@ Create a workflow YAML file in your `.github/workflows` directory. An [example w
 | Input | Description | Default |
 | --------------------|---------------------|--------------------|
 | `podman_api` | Enable Podman API and configure `DOCKER_HOST` environment variable | `false` |
-| `docker_api` | Disable Docker API if any | `true` |
-
 
 ### Examples
 
