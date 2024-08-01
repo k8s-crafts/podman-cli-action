@@ -41,4 +41,6 @@ jobs:
     steps:
       - name: Emulate Docker CLI with Podman
         uses: k8s-crafts/podman-cli-action@v1
+        # with: # Uncomment to enable Podman API
+        #   podman_api: true
 ```
