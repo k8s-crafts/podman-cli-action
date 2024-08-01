@@ -1,0 +1,23 @@
+name: "Podman CLI Action"
+description: "A GitHub Action to emulate Docker CLI using podman"
+author: "k8s-crafts Authors"
+
+branding:
+  color: purple
+  icon: download
+
+# Define your inputs here.
+inputs:
+  podman_api:
+    description: "Enable Podman API and configure DOCKER_HOST environment variable"
+    default: "false"
+  docker_api:
+    description: "Disable Docker API if any"
+    default: "true"
+
+runs:
+  using: composite
+  steps:
+    - name: Emulate Docker CLI with podman
+      shell: bash
+      run: setup.sh
