@@ -13,10 +13,5 @@ inputs:
     default: "false"
 
 runs:
-  using: composite
-  steps:
-    - name: Emulate Docker CLI with podman
-      shell: bash
-      run: ./setup.sh
-      env:
-        ENABLE_PODMAN_API: ${{ inputs.podman_api }}
+  using: "node20"
+  main: "setup.js"
