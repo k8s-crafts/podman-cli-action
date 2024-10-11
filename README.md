@@ -7,7 +7,7 @@ This action provides the functionality to emulate Docker CLI using [`podman`](ht
 
 | Image | YAML Label | Supported |
 | --------------------|---------------------|--------------------|
-| Ubuntu 24.04 <sup>beta</sup> | `ubuntu-24.04` | ✅ |
+| Ubuntu 24.04 | `ubuntu-24.04` | ✅ |
 | Ubuntu 22.04 | `ubuntu-latest` or `ubuntu-22.04` | ✅ |
 | Ubuntu 20.04 | `ubuntu-20.04` | ✅ |
 
