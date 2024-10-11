@@ -45,7 +45,7 @@ main() {
         use_fallback_script
     fi
 
-    if [[ "${ENABLE_PODMAN_API:-}" == "true" ]]; then
+    if [[ "${INPUT_PODMAN_API:-}" == "true" ]]; then
         enable_podman_api
     fi
 }
