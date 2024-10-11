@@ -45,7 +45,7 @@ main() {
         use_fallback_script
     fi
 
-    if [[ -n "$ENABLE_PODMAN_API" && "$ENABLE_PODMAN_API" == "true" ]]; then
+    if [[ "${ENABLE_PODMAN_API:-}" == "true" ]]; then
         enable_podman_api
     fi
 }
