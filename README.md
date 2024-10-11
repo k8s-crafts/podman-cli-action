@@ -1,6 +1,6 @@
 # Podman CLI Action
 
-![Release](https://img.shields.io/badge/Version-v1.0.0-informational?style=flat-square&label=Release)
+![Release](https://img.shields.io/badge/Version-v1.0.1-informational?style=flat-square&label=Release)
 [![Lint](https://img.shields.io/github/actions/workflow/status/k8s-crafts/podman-cli-action/lint.yaml?style=flat-square&logo=github&label=Lint)](https://github.com/k8s-crafts/podman-cli-action/actions/workflows/lint.yaml)
 [![Test](https://img.shields.io/github/actions/workflow/status/k8s-crafts/podman-cli-action/test.yaml?style=flat-square&logo=github&label=Test)](https://github.com/k8s-crafts/podman-cli-action/actions/workflows/test.yaml)
 
